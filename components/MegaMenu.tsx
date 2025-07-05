@@ -10,6 +10,7 @@ interface MegaMenuProps {
 }
 
 const serviceItems = [
+  // All service items already link to /services
   {
     icon: Smartphone,
     title: "Mobile App Development",
@@ -69,6 +70,7 @@ const serviceItems = [
 ]
 
 const solutionItems = [
+  // All solution items and their subitems link to /services
   {
     title: "Enterprise Solutions",
     items: ["ERP Systems", "CRM Solutions", "Business Intelligence", "Workflow Automation"],

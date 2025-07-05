@@ -37,7 +37,7 @@ export default function Header() {
               <Phone className="h-4 w-4" />
               <span>+91 (955) 331-3339</span>
             </div>
-            <span>INFO@brandots.in</span>
+            <span>info@brandots.in</span>
           </div>
           <div className="flex items-center space-x-4">
             <Link href="/careers" className="hover:text-orange-500 transition-colors">
@@ -96,13 +96,13 @@ export default function Header() {
               <Link href="/services" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                 Services
               </Link>
-              <Link href="#portfolio" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+              <Link href="/services" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                 Portfolio
               </Link>
               <Link href="/about" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                 Company
               </Link>
-              <Link href="#blog" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+              <Link href="/services" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                 Insights
               </Link>
               <Link href="/contact" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
@@ -111,12 +111,6 @@ export default function Header() {
             </nav>
 
             <div className="hidden lg:flex items-center space-x-4">
-              <Button
-                variant="outline"
-                className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white touch-manipulation"
-              >
-                Get Quote
-              </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white touch-manipulation">Let's Connect</Button>
             </div>
 
@@ -155,7 +149,7 @@ export default function Header() {
                   Industries
                 </Link>
                 <Link
-                  href="#portfolio"
+                  href="/services"
                   className="text-gray-700 hover:text-orange-500 transition-colors py-2 touch-manipulation"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -176,7 +170,7 @@ export default function Header() {
                   Careers
                 </Link>
                 <Link
-                  href="#blog"
+                  href="/services"
                   className="text-gray-700 hover:text-orange-500 transition-colors py-2 touch-manipulation"
                   onClick={() => setIsMenuOpen(false)}
                 >

@@ -14,7 +14,9 @@ import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main
+      className="min-h-screen w-full bg-white text-neutral-900 antialiased overflow-x-hidden scroll-smooth flex flex-col px-0 sm:px-2 md:px-4 lg:px-0"
+    >
       <Header />
       <Hero />
       <AwardsScroll />
@@ -30,5 +32,5 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
-  )
+  );
 }

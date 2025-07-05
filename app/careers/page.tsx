@@ -17,6 +17,7 @@ import {
   Calendar,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import PopupTrigger from "@/components/PopupTrigger"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import Header from "@/components/Header"
@@ -180,7 +181,7 @@ export default function CareersPage() {
       <Header />
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-orange-50 overflow-hidden">
+        <section className="relative py-8 lg:py-12 bg-gradient-to-br from-blue-50 via-white to-orange-50 overflow-hidden">
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] opacity-5"></div>
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="absolute top-20 left-10 w-32 h-32 bg-orange-200 rounded-full opacity-20 animate-float"></div>
@@ -194,24 +195,24 @@ export default function CareersPage() {
             ></div>
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-block bg-orange-100 text-orange-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
+          <div className="container mx-auto px-2 relative z-10">
+            <div className="text-center max-w-2xl mx-auto">
+              <div className="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-xs font-semibold mb-4">
                 Join Our Team
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
                 Build Your <span className="text-orange-500">Career</span> in Technology with{" "}
                 <span className="text-blue-600">Brandots</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
                 Join 50+ passionate innovators who are transforming businesses through cutting-edge mobile applications
                 and AI solutions. Grow your career while making a global impact.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-base">
                   View Open Positions
                 </Button>
-                <Button variant="outline" className="border-gray-300 px-8 py-4 rounded-full text-lg">
+                <Button variant="outline" className="border-gray-300 px-6 py-3 rounded-full text-base">
                   Learn About Culture
                 </Button>
               </div>
@@ -220,17 +221,17 @@ export default function CareersPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <section className="py-8 bg-gradient-to-r from-orange-500 to-red-500">
+          <div className="container mx-auto px-2">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
               {stats.map((stat, index) => (
-                <div key={index} className="space-y-4">
-                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto">
-                    <stat.icon className="h-8 w-8 text-white" />
+                <div key={index} className="space-y-2">
+                  <div className="w-12 h-12 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto">
+                    <stat.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                    <div className="text-orange-100 font-medium">{stat.label}</div>
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">{stat.number}</div>
+                    <div className="text-orange-100 font-medium text-xs">{stat.label}</div>
                   </div>
                 </div>
               ))}
@@ -239,114 +240,113 @@ export default function CareersPage() {
         </section>
 
         {/* Job Search Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Current Job Openings</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover exciting opportunities to grow your career and work on innovative projects that impact millions
-                of users worldwide.
+        <section className="py-10 bg-white">
+          <div className="container mx-auto px-2">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Current Job Openings</h2>
+              <p className="text-base text-gray-600 max-w-xl mx-auto">
+                Discover exciting opportunities to grow your career and work on innovative projects that impact millions of users worldwide.
               </p>
             </div>
 
             {/* Search and Filter */}
-            <div className="bg-gray-50 rounded-2xl p-6 mb-12">
-              <div className="grid md:grid-cols-4 gap-4">
+            <div className="bg-white rounded-2xl p-4 mb-8 border border-orange-200 shadow-sm">
+              <div className="grid md:grid-cols-4 gap-2">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                  <Input placeholder="Search jobs..." className="pl-10 h-12 border-gray-300 focus:border-orange-500" />
+                  <Input placeholder="Search jobs..." className="pl-10 h-10 border-gray-300 focus:border-orange-500 bg-white text-gray-900 text-sm" />
                 </div>
-                <select className="h-12 px-4 border border-gray-300 rounded-md focus:border-orange-500 focus:ring-orange-500">
+                <select className="h-10 px-3 border border-orange-300 rounded-md focus:border-orange-500 focus:ring-orange-500 bg-white text-gray-900 transition-shadow shadow-sm hover:shadow-md text-sm">
                   {departments.map((dept) => (
                     <option key={dept} value={dept}>
                       {dept}
                     </option>
                   ))}
                 </select>
-                <select className="h-12 px-4 border border-gray-300 rounded-md focus:border-orange-500 focus:ring-orange-500">
+                <select className="h-10 px-3 border border-orange-300 rounded-md focus:border-orange-500 focus:ring-orange-500 bg-white text-gray-900 transition-shadow shadow-sm hover:shadow-md text-sm">
                   {locations.map((location) => (
                     <option key={location} value={location}>
                       {location}
                     </option>
                   ))}
                 </select>
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white h-12">
-                  <Filter className="mr-2 h-5 w-5" />
+                <Button className="bg-white text-orange-500 border border-orange-500 hover:bg-orange-50 hover:text-orange-600 h-10 font-semibold transition-shadow shadow-sm hover:shadow-md text-sm">
+                  <Filter className="mr-2 h-4 w-4" />
                   Filter Jobs
                 </Button>
               </div>
             </div>
 
             {/* Job Listings */}
-            <div className="grid gap-6">
+            <div className="grid gap-4">
               {jobOpenings.map((job) => (
                 <Card
                   key={job.id}
-                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="border border-orange-400 border-opacity-30 bg-white/80 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm rounded-2xl"
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-4">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                      <div className="flex-1 space-y-4">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <h3 className="text-xl font-bold text-gray-900">{job.title}</h3>
+                      <div className="flex-1 space-y-2">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-lg font-bold text-gray-900">{job.title}</h3>
                           {job.urgent && (
-                            <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                            <span className="bg-red-100 text-red-600 px-2 py-0.5 rounded-full text-xs font-semibold">
                               Urgent
                             </span>
                           )}
-                          <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+                          <span className="bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full text-xs font-semibold">
                             {job.department}
                           </span>
                         </div>
 
-                        <p className="text-gray-600 leading-relaxed">{job.description}</p>
+                        <p className="text-gray-600 leading-relaxed text-sm">{job.description}</p>
 
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1">
                           {job.skills.slice(0, 4).map((skill) => (
                             <span
                               key={skill}
-                              className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm font-medium"
+                              className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-md text-xs font-medium"
                             >
                               {skill}
                             </span>
                           ))}
                           {job.skills.length > 4 && (
-                            <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-md text-sm font-medium">
+                            <span className="bg-orange-100 text-orange-600 px-2 py-0.5 rounded-md text-xs font-medium">
                               +{job.skills.length - 4} more
                             </span>
                           )}
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-gray-600">
                           <div className="flex items-center">
-                            <MapPin className="h-4 w-4 mr-2 text-orange-500" />
+                            <MapPin className="h-3 w-3 mr-1 text-orange-500" />
                             {job.location}
                           </div>
                           <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-2 text-orange-500" />
+                            <Clock className="h-3 w-3 mr-1 text-orange-500" />
                             {job.type}
                           </div>
                           <div className="flex items-center">
-                            <Briefcase className="h-4 w-4 mr-2 text-orange-500" />
+                            <Briefcase className="h-3 w-3 mr-1 text-orange-500" />
                             {job.experience}
                           </div>
                           <div className="flex items-center">
-                            <DollarSign className="h-4 w-4 mr-2 text-orange-500" />
+                            <DollarSign className="h-3 w-3 mr-1 text-orange-500" />
                             {job.salary}
                           </div>
                         </div>
                       </div>
 
-                      <div className="mt-6 lg:mt-0 lg:ml-8 flex flex-col sm:flex-row lg:flex-col gap-3">
-                        <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+                      <div className="mt-4 lg:mt-0 lg:ml-6 flex flex-col sm:flex-row lg:flex-col gap-2">
+                        <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2">
                           Apply Now
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
-                        <Button variant="outline" className="border-gray-300">
+                        <Button className="bg-white text-orange-500 border border-orange-500 hover:bg-orange-50 hover:text-orange-600 font-semibold text-sm px-4 py-2">
                           View Details
                         </Button>
-                        <div className="text-sm text-gray-500 text-center lg:text-left mt-2">
-                          <Calendar className="h-4 w-4 inline mr-1" />
+                        <div className="text-xs text-gray-500 text-center lg:text-left mt-1">
+                          <Calendar className="h-3 w-3 inline mr-1" />
                           Posted {job.posted}
                         </div>
                       </div>
@@ -356,10 +356,10 @@ export default function CareersPage() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-8">
               <Button
-                size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold"
+                size="sm"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold text-base"
               >
                 Load More Jobs
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -136,9 +136,9 @@ export default function Services() {
 								<span className="w-2 h-2 bg-white rounded-full mr-2"></span>API Development
 							</li>
 						</ul>
-						<Button className="bg-white text-green-600 hover:bg-green-100 font-semibold px-8 py-3 rounded-full shadow-lg transition-all z-10">
-							Learn More
-						</Button>
+			<Button className="bg-orange-500 text-white hover:bg-orange-600 font-semibold px-8 py-3 rounded-full shadow-lg transition-all z-10">
+			  Learn More
+			</Button>
 					</div>
 				</div>
 

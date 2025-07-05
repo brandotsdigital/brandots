@@ -13,10 +13,10 @@ export default function About() {
   ]
 
   const stats = [
-    { number: "9+", label: "Years of Excellence", icon: Award },
-    { number: "500+", label: "Projects Delivered", icon: Target },
-    { number: "150+", label: "Happy Clients", icon: Users },
-    { number: "50+", label: "Expert Developers", icon: Lightbulb },
+    { number: "12+", label: "Years of Excellence", icon: Award },
+    { number: "2800+", label: "Projects Delivered", icon: Target },
+    { number: "840+", label: "Happy Clients", icon: Users },
+    { number: "28+", label: "Expert Developers", icon: Lightbulb },
   ]
 
   return (
@@ -34,7 +34,7 @@ export default function About() {
                 solutions
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Brandots Technologies is a leading mobile app development company with 9+ years of experience in
+                Brandots Technologies is a leading mobile app development company with 12+ years of experience in
                 delivering innovative digital solutions. We specialize in creating mobile applications that transform
                 businesses and drive digital growth.
               </p>
@@ -46,11 +46,6 @@ export default function About() {
                 not only meet your business requirements but exceed user expectations. We have successfully delivered
                 500+ mobile applications across various industries including healthcare, fintech, e-commerce, and
                 education.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                As a trusted mobile app development partner, we leverage cutting-edge technologies like AI, ML, IoT, and
-                blockchain to create solutions that give you a competitive edge. Our agile development process ensures
-                timely delivery while maintaining the highest quality standards.
               </p>
             </div>
 
@@ -67,7 +62,7 @@ export default function About() {
               <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full">
                 Learn More About Us
               </Button>
-              <Button variant="outline" className="border-gray-300 px-8 py-3 rounded-full">
+              <Button className="bg-white text-orange-500 border border-orange-500 hover:bg-orange-50 px-8 py-3 rounded-full">
                 View Our Work
               </Button>
             </div>
@@ -102,23 +97,23 @@ export default function About() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gray-50 rounded-3xl p-8 md:p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Achievements</h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className="bg-gray-50 rounded-2xl p-4 md:p-6">
+          <div className="text-center mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Our Achievements</h3>
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               Numbers that speak for our excellence and commitment to delivering outstanding results.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto">
-                  <stat.icon className="h-8 w-8 text-white" />
+              <div key={index} className="text-center space-y-2">
+                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mx-auto">
+                  <stat.icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
+                  <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
                 </div>
               </div>
             ))}
