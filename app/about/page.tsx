@@ -4,6 +4,44 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function AboutPage() {
+  const globalOffices = [
+    {
+      country: "India",
+      city: "Hyderabad",
+      address: "Sanvi Yamuna Pride, Avyas Tech Park, #1-98/B Plot# 20&21, VIP Hills, Silicon Valley, Madhapur, Telangana 500081",
+      phone: "+91 9553313339",
+      email: "info@brandots.in",
+      timezone: "IST (GMT+5:30)",
+      isHeadquarters: true,
+    },
+    {
+      country: "USA",
+      city: "New York",
+      address: "79, Madison Ave, Manhattan, NY 10001, USA",
+      phone: "+1 945 367 4727",
+      email: "usa@brandots.in",
+      timezone: "EST (GMT-5)",
+      isHeadquarters: false,
+    },
+    {
+      country: "UK",
+      city: "London",
+      address: "3rd Floor, 86-90 Paul Street EC2A-4NE, London, UK",
+      phone: "+44 945 367 4727",
+      email: "uk@brandots.in",
+      timezone: "GMT (GMT+0)",
+      isHeadquarters: false,
+    },
+    {
+      country: "Australia",
+      city: "Brisbane",
+      address: "Brandots Australia, East Brisbane QLD 4169, Australia",
+      phone: "+61 (XXX) XXX-XXXX",
+      email: "australia@brandots.in",
+      timezone: "AEST (GMT+10)",
+      isHeadquarters: false,
+    },
+  ]
   const achievements = [
     "500+ Mobile Apps Successfully Delivered",
     "150+ AI & ML Solutions Implemented",
@@ -349,6 +387,63 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+    {/* Global Offices Section */}
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Global Presence</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            With offices across multiple continents, we provide 24/7 support and local expertise to serve our global clientele.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {globalOffices.map((office, index) => (
+            <Card
+              key={index}
+              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${office.isHeadquarters ? "ring-2 ring-orange-500" : ""}`}
+            >
+              <CardContent className="p-6">
+                {office.isHeadquarters && (
+                  <div className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
+                    Headquarters
+                  </div>
+                )}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {office.city}, {office.country}
+                </h3>
+                <div className="space-y-3 text-sm text-gray-600">
+                  <div className="flex items-start space-x-2">
+                    {/* MapPin icon */}
+                    <svg className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.418 3.582-8 8-8s8 3.582 8 8c0 4.97-3.582 9-8 9z"/></svg>
+                    <span>{office.address}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    {/* Phone icon */}
+                    <svg className="h-4 w-4 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.28 1.61.46 2.39a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.78.18 1.58.33 2.39.46A2 2 0 0 1 21 16.91z"/></svg>
+                    <span>{office.phone}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    {/* Mail icon */}
+                    <svg className="h-4 w-4 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v16H4V4zm16 0l-8 8-8-8"/></svg>
+                    <span>{office.email}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    {/* Clock icon */}
+                    <svg className="h-4 w-4 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+                    <span>{office.timezone}</span>
+                  </div>
+                </div>
+                <Button className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white">
+                  Contact This Office
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
     </div>
   )
 }
