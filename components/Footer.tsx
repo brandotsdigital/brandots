@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Linkedin, Twitter, Facebook, Instagram, Mail, Phone, MapPin, ArrowRight, Star } from "lucide-react"
+import { Linkedin, Facebook, Instagram, Mail, Phone, MapPin, ArrowRight, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -117,25 +117,25 @@ export default function Footer() {
               <h4 className="font-semibold text-white">Follow Us</h4>
               <div className="flex space-x-4">
                 <Link
-                  href="#"
+                  href="https://in.linkedin.com/company/brandotsss"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
-                >
-                  <Twitter className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="#"
+                  href="https://www.facebook.com/brandots.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
                 >
                   <Facebook className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="http://instagram.com/brandots.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
                 >
                   <Instagram className="h-5 w-5" />
@@ -235,13 +235,13 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Brandots Technologies. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-              <Link href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <Link href="/privacy-policy" className="text-white hover:text-orange-500 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                Terms of Service
+              <Link href="/terms-and-conditions" className="text-white hover:text-orange-500 transition-colors">
+                Terms & Conditions
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <Link href="/cookie-policy" className="text-white hover:text-orange-500 transition-colors">
                 Cookie Policy
               </Link>
               <Link href="#" className="text-gray-400 hover:text-orange-500 transition-colors">

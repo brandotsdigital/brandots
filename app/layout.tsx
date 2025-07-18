@@ -56,6 +56,9 @@ export const metadata: Metadata = {
     generator: 'v0.dev'
 }
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: {
@@ -107,7 +110,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
