@@ -1,4 +1,3 @@
-import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import AwardsScroll from "@/components/AwardsScroll" 
 import About from "@/components/About"
@@ -10,14 +9,12 @@ import GlobalOffices from "@/components/GlobalOffices"
 import StrategicPartnerships from "@/components/StrategicPartnerships"
 import Blog from "@/components/Blog"
 import Contact from "@/components/Contact"
-import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
     <main
       className="min-h-screen w-full bg-white text-neutral-900 antialiased overflow-x-hidden scroll-smooth flex flex-col px-0 sm:px-2 md:px-4 lg:px-0"
     >
-      <Header />
       <Hero />
       <AwardsScroll />
       <About />
@@ -30,7 +27,6 @@ export default function Home() {
       <StrategicPartnerships />
       {/* <Blog /> */}
       <Contact />
-      <Footer />
     </main>
   );
 }

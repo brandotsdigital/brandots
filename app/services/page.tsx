@@ -3,8 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
   title: "Services | Brandots Technologies - Digital Solutions & Mobile App Development",
@@ -14,9 +12,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <>
-      <Header />
-
+    <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 py-20 lg:py-32 overflow-hidden">
         {/* Background Pattern */}
@@ -722,9 +718,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </>
+    </div>
   )
 }
 
