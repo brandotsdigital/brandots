@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import Head from "next/head";
 
 export async function GET() {
   const baseUrl = "https://brandots.in"; // Change to your production domain
@@ -33,25 +32,9 @@ export async function GET() {
     ${urls}
   </urlset>`;
 
-  const robotsTxt = `User-agent: *
-Allow: /
-Sitemap: ${baseUrl}/sitemap.xml`;
-
   return new NextResponse(sitemap, {
     headers: {
       "Content-Type": "application/xml",
     },
   });
 }
-
-export default function AboutPage() {
-  return (
-    <>
-      <Head>
-        <title>About Brandots Technologies</title>
-        <meta name="description" content="Learn about Brandots Technologies, a leading mobile app development company in India." />
-      </Head>
-      {/* ...rest of your page */}
-    </>
-  );
-}kk
